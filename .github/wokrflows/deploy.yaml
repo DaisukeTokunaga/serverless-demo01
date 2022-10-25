@@ -3,7 +3,7 @@ name: Main CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   primary:
