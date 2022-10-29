@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DaisukeTokunaga/serverless-demo01/issues"
   },
-  "homepage": "https://github.com/DaisukeTokunaga/serverless-demo01#readme"
+  "homepage": "https://github.com/DaisukeTokunaga/serverless-demo01#readme",
+  "dependencies": {
+    "serverless": "^3.23.0"
+  }
 }
