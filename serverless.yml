@@ -110,6 +110,3 @@ resources:
       s3Sync:
         - bucketName: s3-sync-test.com
           localDir: static
-
-plugins:
-  - serverless-s3-sync
