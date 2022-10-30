@@ -86,7 +86,7 @@ resources:
     StaticSite:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.webSiteName}
+        BucketName: ${custom.webSiteName}
         AccessControl: PublicRead
         WebsiteConfiguration:
           IndexDocument: index.html
@@ -108,7 +108,7 @@ resources:
     custom:
       webSiteName: s3-sync-test.com
       s3Sync:
-        - bucketName: ${self:custom.webSiteName}
+        - bucketName: ${custom.webSiteName}
           localDir: static
 
 plugins:
