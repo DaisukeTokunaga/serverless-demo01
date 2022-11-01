@@ -115,4 +115,3 @@ resources:
 
 plugins:
   - serverless-s3-sync
-

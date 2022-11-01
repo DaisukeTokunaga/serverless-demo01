@@ -19,5 +19,8 @@
   "homepage": "https://github.com/DaisukeTokunaga/serverless-demo01#readme",
   "dependencies": {
     "serverless": "^3.23.0"
+  },
+  "devDependencies": {
+    "serverless-s3-sync": "^3.1.0"
   }
 }
