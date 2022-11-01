@@ -81,6 +81,13 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
+  custom:
+    webSiteName: s3-sync-test.com
+    s3Sync:
+      - bucketName: s3-sync-test.com
+        localDir: static/
+        acl: public-read
+
 resources:
   Resources:
     StaticSite:
@@ -105,8 +112,7 @@ resources:
               - s3:GetObject
               Resource:
                 Fn::Join: ["", ["arn:aws:s3:::",{"Ref": "StaticSite"},"/*"]]
-    custom:
-      webSiteName: s3-sync-test.com
-      s3Sync:
-        - bucketName: s3-sync-test.com
-          localDir: static
+
+plugins:
+  - serverless-s3-sync
+
