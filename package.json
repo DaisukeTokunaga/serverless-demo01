@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/DaisukeTokunaga/serverless-demo01#readme",
   "dependencies": {
+    "bootstrap": "^5.2.2",
+    "jquery": "^3.6.1",
     "serverless": "^3.23.0"
   },
   "devDependencies": {
