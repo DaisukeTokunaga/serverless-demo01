@@ -46,10 +46,10 @@ custom:
     - bucketName: sls-static-site.com
       localDir: /static
   customDomain:
-    hostsZoneId: ${env:AWS_HOSTZONE_ID}
-    domainName: ${env:AWS_DOMAIN_NAME}
-    certificateName: ${env:AWS_CERT_NAME}
-    certificateArn: ${env:AWS_CERT_ARN}
+    hostsZoneId: ${process.env.AWS_HOSTZONE_ID}
+    domainName: ${process.env.AWS_DOMAIN_NAME}
+    certificateName: ${process.env.AWS_CERT_NAME}
+    certificateArn: ${process.env.AWS_CERT_ARN}
     basePath: ''
     stage: dev
     createRoute53Record: true
