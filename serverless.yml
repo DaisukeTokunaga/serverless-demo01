@@ -1,6 +1,10 @@
 service: my-serverless-app01
 frameworkVersion: '3'
 
+plugins:
+  - serverless-s3-sync
+  - serverless-domain-manager
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -41,7 +45,11 @@ custom:
   s3Sync:
     - bucketName: sls-static-site.com
       localDir: /static
-              
-
-plugins:
-  - serverless-s3-sync
+  customDomain:
+    hostsZoneId: ${env:AWS_HOSTZONE_ID}
+    domainName: ${env:AWS_DOMAIN_NAME}
+    certificateName: ${env:AWS_CERT_NAME}
+    certificateArn: ${env:AWS_CERT_ARN}
+    basePath: ''
+    stage: dev
+    createRoute53Record: true
