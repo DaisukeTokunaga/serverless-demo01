@@ -5,7 +5,6 @@ useDotenv: true
 
 plugins:
   - serverless-s3-sync
-  - serverless-domain-manager
 
 provider:
   name: aws
@@ -22,7 +21,7 @@ resources:
     StaticSite:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: sls-static-site.com
+        BucketName: sls-demo.ga
         AccessControl: PublicRead
         WebsiteConfiguration:
           IndexDocument: index.html
@@ -45,13 +44,5 @@ resources:
 
 custom:
   s3Sync:
-    - bucketName: sls-static-site.com
+    - bucketName: sls-demo.ga
       localDir: /static
-  customDomain:
-    hostsZoneId: ${env:AWS_HOSTZONE_ID}
-    domainName: ${env:AWS_DOMAIN_NAME}
-    certificateName: ${env:AWS_CERT_NAME}
-    certificateArn: ${env:AWS_CERT_ARN}
-    basePath: ''
-    stage: dev
-    createRoute53Record: true
